@@ -1,0 +1,37 @@
+{
+	"name": "Rust IDE",
+
+	"dockerComposeFile": "compose.yml",
+	"service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vallyscode.crayons",
+				"ms-azuretools.vscode-docker",
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"serayuzgur.crates",
+				"vadimcn.vscode-lldb",
+				"Tobermory.es6-string-html",
+				"hediet.vscode-drawio",
+				"aaron-bond.better-comments",
+				"dooez.alt-catppuccin-vsc",
+				"gitpod.gitpod-theme",
+				"PKief.material-icon-theme",
+				"PKief.material-product-icons",
+				"wayou.vscode-todo-highlight"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+		  "version": "latest"
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "rustc --version && cargo --version"
+}
