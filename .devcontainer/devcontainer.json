@@ -33,5 +33,6 @@
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached"
 	],
-	"postCreateCommand": "rustc --version && cargo --version"
+	"postCreateCommand": "rustc --version && cargo --version",
+	"remoteUser": "${localEnv:USER}"
 }

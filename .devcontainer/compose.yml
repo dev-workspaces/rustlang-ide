@@ -6,7 +6,7 @@ services:
       dockerfile: rust.Dockerfile
       args:
         - RUST_VERSION=1.74.0
-        - USER_NAME=k33g
+        - USER_NAME=${USER}
     volumes:
       - ../..:/workspaces:cached      
     environment:
